@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Mladen's Blog`,
+    description: `You will read the best IT posts in the world here.`,
+    author: `Mladen`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -27,8 +27,18 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-source-drupal`,
+      options: {
+        baseUrl: `http://my-drupal9-site.ddev.site/`,
+        apiBase: `jsonapi`, // optional, defaults to `jsonapi`
+      },
+    },
+    'gatsby-plugin-material-ui',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
   ],
 }
